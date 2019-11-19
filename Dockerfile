@@ -1,2 +1,2 @@
 FROM circleci/node:10
-RUN apt-get update
+RUN sudo apt-get update
