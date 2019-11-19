@@ -11,7 +11,7 @@ exports.config = {
         maxInstances: 5,
         browserName: 'chrome',
         'goog:chromeOptions': {
-            args: ['--no-sandbox', '--window-size=1366,968', '--log-level=3'],
+            args: ['--no-sandbox', '--disable-dev-shm-usage'],
         },
     }],
 
