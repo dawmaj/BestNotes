@@ -6,6 +6,7 @@
         stages {
             stage('Build') {
                 steps {
+                    sh "sudo chown -R 1003:100 "/.npm""
                     sh "npm install"
                 }
             }
