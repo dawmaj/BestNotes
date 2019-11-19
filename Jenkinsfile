@@ -1,5 +1,7 @@
     pipeline {
-        agent any
+            agent {
+        docker { image 'circleci/php:7.3' }
+        }
 
         stages {
             stage('Build') {
