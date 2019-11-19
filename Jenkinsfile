@@ -4,8 +4,8 @@
         stages {
             stage('Build') {
                 steps {
-                    sh "cd tests"
-					sh "npm install"
+                    sh "cd test"
+					echo 'Building..'
                 }
             }
             stage('Test') {
