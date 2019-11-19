@@ -7,8 +7,8 @@
         stages {
             stage('Build') {
                 steps {
+                    sh "apk update && apk upgrade"
                     sh "npm install"
-                    sh "apt-file search libnss3.so"
                 }
             }
             stage('Test') {
