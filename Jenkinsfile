@@ -1,6 +1,7 @@
     pipeline {
-        agent {
-        docker { image 'circleci/node:10' }
+        agent {docker { image 'circleci/node:10' }}
+        environment {
+            HOME = '.'
         }
 
         stages {
