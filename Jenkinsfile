@@ -1,6 +1,6 @@
     pipeline {
-            agent {
-        docker { image 'circleci/php:7.3' }
+        agent {
+        docker { image 'circleci/node:10' }
         }
 
         stages {
