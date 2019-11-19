@@ -12,6 +12,7 @@
             }
             stage('Test') {
                 steps {
+                    sh "npm install webdriverio"
                     sh "npm test"
                 }
             }
