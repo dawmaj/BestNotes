@@ -1,0 +1,7 @@
+/node_modules/
+/test/allure-results/*.xml
+/test/allure-results/*.png
+/test/allure-results/*.log
+/test/allure-results/*.json
+/test/screenshots/*.png
+/allure-report/
