@@ -13,6 +13,8 @@ exports.config = {
     }],
 
     logLevel: 'info',
+    port: 9515,
+    deprecationWarnings: true,
     bail: 0,
     baseUrl: 'http://localhost',
     waitforTimeout: 10000,
