@@ -6,14 +6,12 @@
         stages {
             stage('Build') {
                 steps {
-                    sh "cd test"
-					echo 'Building..'
+                    sh "npm install"
                 }
             }
             stage('Test') {
                 steps {
-                    sh "/usr/local/bin/npm install"
-                    sh "/usr/local/bin/npm test"
+                    sh "npm test"
                 }
             }
             stage('Deploy') {
