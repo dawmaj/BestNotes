@@ -1,5 +1,5 @@
     pipeline {
-        agent {docker { image 'circleci/node:10' }}
+        agent {dockerfile true}
         environment {
             HOME = '.'
         }
@@ -7,13 +7,12 @@
         stages {
             stage('Build') {
                 steps {
-                    sh "apk update && apk upgrade"
                     sh "npm install"
+                    sh "npm install webdriverio"
                 }
             }
             stage('Test') {
                 steps {
-                    sh "npm install webdriverio"
                     sh "npm test"
                 }
             }
