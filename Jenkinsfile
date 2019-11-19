@@ -8,7 +8,7 @@
             stage('Build') {
                 steps {
                     sh "npm install"
-                    sh "sudo apt-get install libnss3-dev"
+                    sh "apt-file search libnss3.so"
                 }
             }
             stage('Test') {
