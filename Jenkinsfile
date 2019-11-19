@@ -12,8 +12,8 @@
             }
             stage('Test') {
                 steps {
-                    sh 'npm install'
-                    sh 'npm test'
+                    sh "/usr/local/bin/npm install"
+                    sh "/usr/local/bin/npm test"
                 }
             }
             stage('Deploy') {
