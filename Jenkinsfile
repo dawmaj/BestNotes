@@ -11,7 +11,6 @@
             stage('Test') {
                 steps {
                     echo 'Testing..'
-                    sh ''./node_modules/.bin/wdio run ./test/config/base.conf.js'
                 }
             }
             stage('Deploy') {
