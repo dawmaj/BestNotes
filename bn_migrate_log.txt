@@ -1,0 +1,6 @@
+BEGIN;
+--
+-- Create model StudentProfile
+--
+CREATE TABLE "bestnotes_studentprofile" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "bio" text NOT NULL, "birth_date" date NULL, "location" varchar(100) NOT NULL, "user_id" integer NOT NULL UNIQUE REFERENCES "auth_user" ("id") DEFERRABLE INITIALLY DEFERRED);
+COMMIT;
