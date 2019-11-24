@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+{% load static %}
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'login.css' %}">
+{% endblock %}
+{% block content %}
+<div class="container login-container">
+    <div class="row justify-content-md-center">
+        <div class="col-md-6 login-form-2">
+            <i class="fa fa-sticky-note-o fa-5x logo"> </i>
+            <h1><strong>Best Notes</strong></h1>
+            <form method="post" action="{% url 'login' %}">
+                {% csrf_token %}
+                
+                {% for hidden in form.hidden_fields %}
+                    {{ hidden }}
+                {% endfor %}
+
+                {% if form.errors %}
+                    <p class="text-warning">Nieprawidłowy adres e-mail lub hasło. Spróbuj ponownie!</p>
+                {% endif %}
+                
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend"><i class="input-group-text fa fa-envelope fa-lg"></i></div>
+                    {% render_field form.username class="form-control" placeholder="Email"%}
+                </div>
+                <div class="input-group">
+                    <div class="input-group-prepend"><i class="input-group-text fa fa-lock fa-lg"></i></div>
+                    {% render_field form.password class="form-control" placeholder="Hasło"%}
+                </div>
+                <div class="form-group mt-3">
+                    <input type="submit" class="btnSubmit" value="Login" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
