@@ -1,0 +1,47 @@
+.login-container{
+    margin-top: 5%;
+    text-align: center;
+}
+.logo{
+    color:white;
+    margin-bottom: 5%;
+}
+
+
+.login-form-2{
+    border-radius: 5%;
+    padding: 5%;
+    background: #0062cc;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+}
+.input-group-text{
+    font-size: 1.5rem;
+    min-width: 50px;
+}
+
+.icon{
+    text-align: center;
+}
+
+
+.login-form-2 h1{
+    text-align: center;
+    color: #fff;
+}
+.login-container form{
+    padding: 8%;
+}
+.btnSubmit
+{
+    width: 50%;
+    border-radius: 1rem;
+    padding: 1.5%;
+    border: none;
+    cursor: pointer;
+}
+
+.login-form-2 .btnSubmit{
+    font-weight: 600;
+    color: #0062cc;
+    background-color: #fff;
+}

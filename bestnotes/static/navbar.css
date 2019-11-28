@@ -1,0 +1,9 @@
+.nolink{
+    text-decoration: none;
+    color:white;
+}
+
+.nolink:hover{
+    text-decoration: none;
+    color:white;
+}
