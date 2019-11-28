@@ -1,0 +1,23 @@
+@@WINDOWS@@
+run cmd
+change directory to <your_project_path>\BestNotesProject
+py manage.py runserver
+
+visit: http://127.0.0.1:8000/bestnotes/
+or
+http://127.0.0.1:8000/admin/
+
+username: admin
+password: admin
+
+@@LINUX@@
+run cmd
+change directory to <your_project_path>\BestNotesProject
+python manage.py runserver
+
+visit: http://127.0.0.1:8000/bestnotes/
+or
+http://127.0.0.1:8000/admin/
+
+username: admin
+password: admin
