@@ -18,6 +18,7 @@ class StudentProfile(models.Model):
     to add as foreign key, when coresponding table is added:
     CourseId
     """
+    
 
 
 
