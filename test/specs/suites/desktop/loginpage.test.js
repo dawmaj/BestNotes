@@ -13,5 +13,4 @@ describe('Login page in BestNotes', () => {
        expect(login.isLoginFormDisplayed(), 'Login form should be displayed').to.be.true;
    })
    
-   it
 });
