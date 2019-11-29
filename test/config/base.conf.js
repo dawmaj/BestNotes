@@ -14,7 +14,7 @@ exports.config = {
         maxInstances: 5,
         browserName: 'chrome',
         'goog:chromeOptions': {
-            args: ['--no-sandbox','--headless','--start-maximized'],
+            args: ['--no-sandbox','--start-maximized'],
         },
     }],
 
