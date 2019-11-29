@@ -1,6 +1,9 @@
 exports.config = {
     runner: 'local',
     path: '/',
+    suites: {
+        login: ['./test/specs/suites/desktop/loginpage.test.js'],
+    },
     specs: [
         './test/specs/**/*.js'
     ],
