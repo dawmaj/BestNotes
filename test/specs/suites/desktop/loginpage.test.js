@@ -7,7 +7,7 @@ const Login = require('../../components/login');
 const Subject = require('../../components/subject');
 
 const testName = 'test';
-const corrrectName = 'admin';
+const correctName = 'admin';
 
 describe('Login page in BestNotes', () => {
    it('should be displayed', () => {
@@ -49,8 +49,8 @@ it('should logged user with correct credentials', () => {
     expect(login.isLoginFormDisplayed(), 'Login form should be displayed').to.be.true;
 
     addStep('Fill credentials and try to login');
-    login.fillCredentials(login.emailField, corrrectName);
-    login.fillCredentials(login.passwordField, corrrectName);
+    login.fillCredentials(login.emailField, correctName);
+    login.fillCredentials(login.passwordField, correctName);
     login.clickLoginButton();
 
     addStep('Check if the page is displayed and URL matches');
