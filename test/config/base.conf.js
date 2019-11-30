@@ -3,6 +3,7 @@ exports.config = {
     path: '/',
     suites: {
         login: ['./test/specs/suites/desktop/loginpage.test.js'],
+        subject: ['./test/specs/suites/desktop/subjectpage.test.js'],
     },
     specs: [
         './test/specs/**/*.js'
