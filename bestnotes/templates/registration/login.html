@@ -23,11 +23,11 @@
                 
                 <div class="input-group mb-3">
                     <div class="input-group-prepend"><i class="input-group-text fa fa-envelope fa-lg"></i></div>
-                    {% render_field form.username class="form-control" placeholder="Email"%}
+                    {% render_field form.username class="form-control" placeholder="Email" id="loginform"%}
                 </div>
                 <div class="input-group">
                     <div class="input-group-prepend"><i class="input-group-text fa fa-lock fa-lg"></i></div>
-                    {% render_field form.password class="form-control" placeholder="Hasło"%}
+                    {% render_field form.password class="form-control" placeholder="Hasło" id="passwordform"%}
                 </div>
                 <div class="form-group mt-3">
                     <input type="submit" class="btnSubmit" value="Login" />
