@@ -1,6 +1,10 @@
 exports.config = {
     runner: 'local',
     path: '/',
+    suites: {
+        login: ['./test/specs/suites/desktop/loginpage.test.js'],
+        subject: ['./test/specs/suites/desktop/subjectpage.test.js'],
+    },
     specs: [
         './test/specs/**/*.js'
     ],
@@ -11,7 +15,7 @@ exports.config = {
         maxInstances: 5,
         browserName: 'chrome',
         'goog:chromeOptions': {
-            args: ['--no-sandbox', '--disable-dev-shm-usage','--headless','--start-maximized'],
+            args: ['--no-sandbox','--headless','--start-maximized'],
         },
     }],
 

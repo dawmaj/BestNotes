@@ -23,7 +23,9 @@
     "@wdio/mocha-framework": "^5.16.5",
     "@wdio/spec-reporter": "^5.16.5",
     "@wdio/sync": "^5.16.5",
+    "chai": "^4.2.0",
     "chromedriver": "^78.0.1",
+    "deepmerge": "^4.2.2",
     "wdio-chromedriver-service": "^5.0.2"
   },
   "dependencies": {
