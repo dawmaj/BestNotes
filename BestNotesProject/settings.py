@@ -28,6 +28,11 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
+STATIC_URL = '/static/'
+#
+LOGIN_REDIRECT_URL = '/bestnotes/'
+LOGOUT_REDIRECT_URL = '/bestnotes/accounts/login/'
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -38,7 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'widget_tweaks'
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [
@@ -120,6 +125,3 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
-
-LOGIN_REDIRECT_URL = '/bestnotes/subject/' #To change, at this moment we have no home site
-LOGOUT_REDIRECT_URL = '/bestnotes/accounts/login'

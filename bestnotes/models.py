@@ -18,16 +18,8 @@ class StudentProfile(models.Model):
     to add as foreign key, when coresponding table is added:
     CourseId
     """
+    
 
-
-class Subject(models.Model):
-    name = models.CharField(max_length=30)
-    student = models.ForeignKey(StudentProfile, on_delete=models.CASCADE)
-
-class Topic(models.Model):
-    name = models.CharField(max_length=30)
-    subject = models.ForeignKey(Subject, on_delete=models.CASCADE)
-    add_date = models.DateField()
 
 
 
@@ -42,3 +34,15 @@ def create_studentprofile(sender, instance, created, **kwargs):
 @receiver(post_save, sender=User)
 def save_studentprofile(sender, instance, **kwargs):
     instance.studentprofile.save()
+
+
+class Subject(models.Model):
+    name = models.CharField(max_length=30)
+    student = models.ForeignKey(StudentProfile, on_delete=models.CASCADE)
+
+class Topic(models.Model):
+    name = models.CharField(max_length=30)
+    subject = models.ForeignKey(Subject, on_delete=models.CASCADE)
+    add_date = models.DateField()
+
+

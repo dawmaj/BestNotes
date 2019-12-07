@@ -15,8 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from bestnotes.views import homepage
 
 urlpatterns = [
     path('bestnotes/', include('bestnotes.urls')),
+    path('', homepage, name='homepage'),
     path('admin/', admin.site.urls),
 ]
