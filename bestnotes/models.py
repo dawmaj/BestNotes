@@ -46,3 +46,9 @@ class Topic(models.Model):
     add_date = models.DateField()
 
 
+class Note(models.Model):
+    name = models.CharField(max_length=30)
+    text = models.TextField(blank=False)
+    topic = models.ForeignKey(Topic, on_delete=models.SET_NULL, null=True)
+    user = models.ForeignKey(StudentProfile, on_delete=models.CASCADE)
+    add_date = models.DateField()

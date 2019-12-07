@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'note.css' %}">
+{% endblock %}
+{% block content %}
+{% include 'navbar.html' %}
+<div class="container d-flex justify-content-center">
+    <div class="row mt-4"><h1>Tytuł: {{ note.name }}</h1></div>
+</div>
+
+<div class="container">
+    <div class="d-flex justify-content-center mt-5">
+        <h3> {{ note.text }}</h3>
+    </div>
+</div>
+
+{% endblock %}

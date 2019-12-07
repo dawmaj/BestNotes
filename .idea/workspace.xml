@@ -2,10 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b23c009e-2f8a-48f7-8b29-023f93596932" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/bestnotes/dbAPI.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bestnotes/static/note.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bestnotes/templates/note.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bestnotes/templates/test.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bestnotes/templates/testid.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bestnotes/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/bestnotes/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bestnotes/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/bestnotes/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bestnotes/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/bestnotes/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bestnotes/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/bestnotes/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bestnotes/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/bestnotes/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,6 +23,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -32,6 +38,7 @@
   <component name="ProjectId" id="1U5Jq3TEUnuX8tmyYK4OsXqAEBc" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.general" />
@@ -49,7 +56,7 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="Unittests in bestnotesunittests.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="Unittests in E:/MojeDane/StudiaWMI/Semestr_2_Zimowy_2019-20/Systemy_informatyczne/BES-32/BestNotes/bestnotes/bestnotesunittests.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="BestNotesProject" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -65,7 +72,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.Unittests in bestnotesunittests.py" />
+        <item itemvalue="Python tests.Unittests in E:/MojeDane/StudiaWMI/Semestr_2_Zimowy_2019-20/Systemy_informatyczne/BES-32/BestNotes/bestnotes/bestnotesunittests.py" />
       </list>
     </recent_temporary>
   </component>

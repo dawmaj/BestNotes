@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+{% for note in notes%}
+
+{{ note.name }}
+
+{% endfor %}
+
+{% endblock %}
