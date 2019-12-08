@@ -3,6 +3,7 @@
 /test/allure-results/*.png
 /test/allure-results/*.log
 /test/allure-results/*.json
+/test/allure-results/*.mp4
 /test/screenshots/*.png
 /allure-report/
  
