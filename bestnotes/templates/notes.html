@@ -12,7 +12,7 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-6">
-            <h2>Dostępne notatki</h2>
+            <h2 class="text-white text-center">Dostępne notatki</h2>
             <ul class="list-group cProductsList mt-3"> 
                 {% for note in notes%}
                     {% if user.id != note.user.user.id %}
@@ -22,7 +22,7 @@
             </ul>
         </div>
         <div class="col-sm-6">
-            <h2>Twoje notatki</h2>
+            <h2 class="text-white text-center">Twoje notatki</h2>
             <ul class="list-group cProductsList mt-3"> 
                 {% for note in notes%}
                 {% if user.id == note.user.user.id %}
