@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'subject.css' %}">
+{% endblock %}
+{% block content %}
+{% include 'navbar.html' %}
+<div class="container d-flex justify-content-center">
+    <div class="row mt-4"><h1>{{id}}</h1></div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6">
+            <h2>Dostępne notatki</h2>
+            <ul class="list-group cProductsList mt-3"> 
+                {% for note in notes%}
+                    {% if user.id != note.user.user.id %}
+                    <a href="/bestnotes/note/{{ note.id }}" class="list-group-item list-group-item-action">{{ note.name }}</a>
+                {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="col-sm-6">
+            <h2>Twoje notatki</h2>
+            <ul class="list-group cProductsList mt-3"> 
+                {% for note in notes%}
+                {% if user.id == note.user.user.id %}
+                    <a href="/bestnotes/note/{{ note.id }}" class="list-group-item list-group-item-action">{{ note.name }}</a>
+                {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

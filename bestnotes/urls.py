@@ -11,5 +11,5 @@ urlpatterns = [
     path('note/<id>', views.note_id, name="note"),
 
     path('notes/', views.notes_all, name="notes"),
-    path('notes/<subject_name>', views.notes_name, name="notes_name")
+    path('notes/<subject_id>', views.notes_name, name="notes_id")
 ]
