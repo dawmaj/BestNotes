@@ -1,3 +1,5 @@
+const video = require('wdio-video-reporter');
+
 exports.config = {
     runner: 'local',
     path: '/',
@@ -35,6 +37,10 @@ exports.config = {
                 outputDir: 'test/allure-results',
             },
         ],
+        [video, {
+            saveAllVideos: true,
+            videoSlowdownMultiplier: 3,
+          }],
         ['allure',
             {
                 outputDir: 'test/allure-results',
