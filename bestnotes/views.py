@@ -29,14 +29,14 @@ def note_id(request,id):
 
 
 #Give all notes connected with subject name and pass it to html
-def notes_name(request,subject_name):
+def notes_name(request,subject_id):
     all_notes = Note.objects.all()
-    subject_notes = all_notes.filter(topic__subject__name=subject_name) #Get all notes with subject name
+    subject_notes = all_notes.filter(topic__subject__id=subject_id) #Get all notes with subject name
     context = {
         'notes' : subject_notes
     }
     #Change website here
-    return render(request, "test.html", context)
+    return render(request, "notes.html", context)
 
 def notes_all(request):
     all_notes = Note.objects.all()
