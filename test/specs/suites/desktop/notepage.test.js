@@ -46,7 +46,7 @@ describe('Note page in BestNotes', () => {
         expect(browser.getUrl(), 'Note Form URL is displayed as expected').to.equal(common.bestNotesLink + 'notes/1');
 
         addStep('Click Note about Thomas Pesquet');
-        expect(note.getTextFromNoteButton(), 'Title of note shoukd be equal as Notatka - Thomas Pesquet').to.equal('Notatka - Thomas Pesquet');
+        expect(note.getTextFromNoteButton(), 'Title of note shoukd be equal Notatka - Thomas Pesquet').to.equal('Notatka - Thomas Pesquet');
         note.clickNoteButton();
 
         addStep('Check if Note has a correct URL, title and contains text')
