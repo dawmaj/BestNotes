@@ -14,15 +14,16 @@ describe('Note page in BestNotes', () => {
         addStep('Redirect to Note Page as anon');
         navigate.toNotesPage();
  
-        addStep('Check if Note Form is displayed and URL matches');
-        expect(browser.getUrl(), 'Post details URL should include post ID').to.equal(common.bestNotesLink + 'notes/1');
+        addStep('Check if Note Form URL matches');
+        expect(browser.getUrl(), 'Note Form URL is displayed as expected').to.equal(common.bestNotesLink + 'notes/1');
 
         addStep('Click Note with Lorem Ipsum');
         note.clickNoteButton();
 
-        addStep('Check if Note has a correct title and contains text')
-        expect(note.getTitleNote(), 'Post details URL should include post ID').to.equal(`${common.titleNote}${common.loremIpsum}`);
-        expect(note.getTextNote(), 'Post details URL should include post ID').to.contain(common.loremIpsum);
+        addStep('Check if Note has a correct URL, title and contains text')
+        expect(browser.getUrl(), 'Note URL is displayed as expected').to.equal(common.bestNotesLink + 'note/1');
+        expect(note.getTitleNote(), 'Title note should be displayed about Lorem ipsum').to.equal(`${common.titleNote}${common.loremIpsum}`);
+        expect(note.getTextNote(), 'Text note should contained lorem ipsum text').to.contain(common.loremIpsum);
     })
 
     it('should be displayed properly as logged user', () => {
@@ -42,14 +43,15 @@ describe('Note page in BestNotes', () => {
         navigate.toNotesPage();
 
         addStep('Check if Note Form is displayed and URL matches');
-        expect(browser.getUrl(), 'Post details URL should include post ID').to.equal(common.bestNotesLink + 'notes/1');
+        expect(browser.getUrl(), 'Note Form URL is displayed as expected').to.equal(common.bestNotesLink + 'notes/1');
 
         addStep('Click Note about Thomas Pesquet');
-        expect(note.getTextFromNoteButton(), 'Post details URL should include post ID').to.equal('Notatka - Thomas Pesquet');
+        expect(note.getTextFromNoteButton(), 'Title of note shoukd be equal as Notatka - Thomas Pesquet').to.equal('Notatka - Thomas Pesquet');
         note.clickNoteButton();
 
-        addStep('Check if Note has a correct title and contains text')
-        expect(note.getTitleNote(), 'Post details URL should include post ID').to.equal(`${common.titleNote}Notatka - Thomas Pesquet`);
-        expect(note.getTextNote(), 'Post details URL should include post ID').to.contain('Thomas Pesquet');
+        addStep('Check if Note has a correct URL, title and contains text')
+        expect(browser.getUrl(), 'Note URL is displayed as expected').to.equal(common.bestNotesLink + 'note/3');
+        expect(note.getTitleNote(), 'Title note should be displayed about Thomas Pasquet').to.equal(`${common.titleNote}Notatka - Thomas Pesquet`);
+        expect(note.getTextNote(), 'Text note should contained Thomas Pesquet text').to.contain('Thomas Pesquet');
     })
 });
