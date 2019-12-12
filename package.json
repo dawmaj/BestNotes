@@ -29,6 +29,7 @@
     "wdio-chromedriver-service": "^5.0.2"
   },
   "dependencies": {
+    "wdio-video-reporter": "^1.4.4",
     "webdriverio": "^5.16.7"
   }
 }

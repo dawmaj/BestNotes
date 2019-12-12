@@ -4,8 +4,8 @@ const base = require('../base/base');
 class Login {
     constructor() {
         this.loginForm = '.login-form-2';
-        this.emailField = '#id_username';
-        this.passwordField = '#id_password';
+        this.emailField = '#loginform';
+        this.passwordField = '#passwordform';
         this.loginButton = '.btnSubmit';
         this.warringMessage = '.text-warning';
     }

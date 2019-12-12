@@ -1,9 +1,11 @@
+const video = require('wdio-video-reporter');
+
 exports.config = {
     runner: 'local',
     path: '/',
     suites: {
         login: ['./test/specs/suites/desktop/loginpage.test.js'],
-        subject: ['./test/specs/suites/desktop/subjectpage.test.js'],
+        note: ['./test/specs/suites/desktop/notepage.test.js'],
     },
     specs: [
         './test/specs/**/*.js'
@@ -15,7 +17,7 @@ exports.config = {
         maxInstances: 5,
         browserName: 'chrome',
         'goog:chromeOptions': {
-            args: ['--no-sandbox','--headless','--start-maximized'],
+            args: ['--no-sandbox','--headless','--window-size=1366,968'],
         },
     }],
 
@@ -35,6 +37,10 @@ exports.config = {
                 outputDir: 'test/allure-results',
             },
         ],
+        [video, {
+            saveAllVideos: true,
+            videoSlowdownMultiplier: 3,
+          }],
         ['allure',
             {
                 outputDir: 'test/allure-results',

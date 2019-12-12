@@ -4,10 +4,7 @@ const { expect } = require('chai');
 const common = require('../../base/common');
 const navigate = require('../../base/navigation');
 const Login = require('../../components/login');
-const Subject = require('../../components/subject');
-
-const testName = 'test';
-const correctName = 'admin';
+const Note = require('../../components/note');
 
 describe('Login page in BestNotes', () => {
    it('should be displayed', () => {
@@ -17,7 +14,7 @@ describe('Login page in BestNotes', () => {
        navigate.toLoginPage();
 
        addStep('Check if Login Form is displayed and URL ');
-       expect(browser.getUrl(), 'Post details URL should include post ID').to.equal(common.bestNotesLink + 'accounts/login/');
+       expect(browser.getUrl(), 'Login page URL is the same as expected').to.equal(common.bestNotesLink + 'accounts/login/');
        expect(login.isLoginFormDisplayed(), 'Login form should be displayed').to.be.true;
    })
 
@@ -31,8 +28,8 @@ describe('Login page in BestNotes', () => {
     expect(login.isLoginFormDisplayed(), 'Login form should be displayed').to.be.true;
 
     addStep('Fill credentials and try to login');
-    login.fillCredentials(login.emailField, testName);
-    login.fillCredentials(login.passwordField, testName);
+    login.fillCredentials(login.emailField, common.testName);
+    login.fillCredentials(login.passwordField, common.testName);
     login.clickLoginButton();
 
     addStep('Check if the error message is displayed');
@@ -49,12 +46,12 @@ it('should logged user with correct credentials', () => {
     expect(login.isLoginFormDisplayed(), 'Login form should be displayed').to.be.true;
 
     addStep('Fill credentials and try to login');
-    login.fillCredentials(login.emailField, correctName);
-    login.fillCredentials(login.passwordField, correctName);
+    login.fillCredentials(login.emailField, common.correctName);
+    login.fillCredentials(login.passwordField, common.correctName);
     login.clickLoginButton();
 
     addStep('Check if the page is displayed and URL matches');
-    expect(browser.getUrl(), 'Post details URL should include post ID').to.equal(common.bestNotesLink + 'subject/');
-    expect(new Subject().isNavbarDisplayed(), 'Subject page should be displayed').to.be.true;
+    expect(browser.getUrl(), 'Subject page URL is the same as expected').to.equal(common.bestNotesLink + 'subject/');
+    expect(new Note().isNavbarDisplayed(), 'Subject page should be displayed').to.be.true;
 })
 });
