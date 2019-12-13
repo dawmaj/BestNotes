@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from bestnotes.models import Note
+from bestnotes.models import Note,Subject
 # Create your views here.
 
 from django.http import HttpResponse
@@ -44,3 +44,15 @@ def notes_all(request):
         'notes' : all_notes
     }
     return render(request, "test.html", context)
+
+def subjects_all(request):
+    all_subjects = Subject.objects.all()
+    student_notes = Note.objects.all().filter(user__user__id=request.user.id)
+    student_subjects = []
+    for note in student_notes:
+        student_subjects.append(note.topic.subject)
+    context = {
+        'subjects' : all_subjects,
+        'student_subjects': student_subjects
+    }
+    return render(request, "subjects.html", context)
