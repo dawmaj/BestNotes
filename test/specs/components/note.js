@@ -7,8 +7,12 @@ class Note {
         this.manageButton = '.nolink';
         this.noteHeader = '.mt-4 > h1';
         this.noteText = 'h3';
-        this.noteSelect = '.cProductsList > a:nth-child(1)';
-        this.manageNotesButton = '.list-group-item > .btn-primary > a';
+        this.noteSelectButton = '#all_notes_list > a:nth-child(1)';
+        this.subjectButton = '#Programowanie1';
+        this.topicButton = '.cProductsList > a:nth-child(1)';
+        this.yourNotesButton = '#your_notes_list > a:nth-child(1)';
+        this.deleteNoteButton = '#delete_note';
+        this.editNoteButton = '#edit_note';
     }
 
     isNavbarDisplayed() {
@@ -16,18 +20,38 @@ class Note {
         return base.isDisplayed(this.subjectNavbar);
     }
 
+    getTextFromListButton() {
+        base.waitForDisplayed(this.topicButton);
+        return base.getAttribute(this.topicButton, 'textContent', 'Text in topic');
+    }
+
+    getTextFromYourNotesListButton() {
+        base.waitForDisplayed(this.yourNotesButton);
+        return base.getAttribute(this.yourNotesButton, 'textContent', 'Text in topic');
+    }
+
     getTextFromNoteButton() {
-        base.waitForDisplayed(this.noteSelect);
-        return base.getAttribute(this.noteSelect, 'textContent', 'Text in note');
+        base.waitForDisplayed(this.noteSelectButton);
+        return base.getAttribute(this.noteSelectButton, 'textContent', 'Text in note');
     }
 
     clickNoteButton() {
-        base.click(this.noteSelect, 'Note button');
+        base.click(this.noteSelectButton, 'Note button');
         return this;
     }
 
-    clickManageButton() {
-        base.click(this.manageNotesButton, 'Manage Note button');
+    clickYourNoteButton() {
+        base.click(this.yourNotesButton, 'Note button');
+        return this;
+    }
+
+    clickSubjectButton() {
+        base.click(this.subjectButton, 'Subject button');
+        return this;
+    }
+
+    clickTopicButton() {
+        base.click(this.topicButton, 'Subject button');
         return this;
     }
 
@@ -40,5 +64,17 @@ class Note {
         base.waitForDisplayed(this.noteText);
         return base.getAttribute(this.noteText, 'textContent', 'Text in note');
     }
+
+
+    isEditButtonDisplayed() {
+        base.waitForDisplayed(this.editNoteButton);
+        return base.isDisplayed(this.editNoteButton);
+    }
+
+    isDeleteButtonDisplayed() {
+        base.waitForDisplayed(this.deleteNoteButton);
+        return base.isDisplayed(this.deleteNoteButton);
+    }
+
 }
 module.exports = Note;
