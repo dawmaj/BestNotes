@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from bestnotes.models import Note
+from bestnotes.models import Note, Topic, Subject
 # Create your views here.
 
 from django.http import HttpResponse
@@ -37,6 +37,32 @@ def notes_name(request,subject_id):
     }
     #Change website here
     return render(request, "notes.html", context)
+
+
+def notes_by_topic_id(request,topic_id):
+    all_notes = Note.objects.all()
+    topic_notes = all_notes.filter(topic__id=topic_id) #Get all notes with given topic id
+    context = {
+        'notes' : topic_notes
+    }
+    #Change website here
+    return render(request, "notes.html", context)
+
+def topics_by_subject_id(request,subject_id):
+    all_topics = Topic.objects.all()
+    topics_under_subject = all_topics.filter(subject__id=subject_id) #get topics under given subject
+
+    if len(topics_under_subject) > 0:
+        subject_name = all_topics[0].subject.name  # Get note with given id
+
+        context = {
+            'subject_name': subject_name,
+            'topics': topics_under_subject
+        }
+        return render(request, "topics.html", context)
+    else:
+        return HttpResponse("Topics not found.")
+
 
 def notes_all(request):
     all_notes = Note.objects.all()

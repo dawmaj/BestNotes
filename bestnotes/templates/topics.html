@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'topics.css' %}">
+{% endblock %}
+{% block content %}
+{% include 'navbar.html' %}
+<div class="container d-flex justify-content-center">
+    <div class="row mt-4"><h1 class="subjectname">{{subject_name}}</h1></div>
+</div>
+
+<div class="container d-flex justify-content-center">
+    <div class="row">
+        <div class="col-sm-12">
+            <h2 class="text-white text-center">Dostępne zagadnienia</h2>
+            <ul class="list-group cProductsList mt-4">
+                {% for topic in topics%}
+                    <a href="/bestnotes/notes_by_topic/{{ topic.id }}" class="list-group-item list-group-item-action">{{ topic.name }}</a>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
