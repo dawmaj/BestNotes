@@ -2,16 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b23c009e-2f8a-48f7-8b29-023f93596932" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/bestnotes/static/note.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bestnotes/templates/note.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bestnotes/templates/test.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bestnotes/templates/testid.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bestnotes/static/topics.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bestnotes/templates/topics.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bestnotes/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/bestnotes/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bestnotes/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/bestnotes/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bestnotes/templates/subjects.html" beforeDir="false" afterPath="$PROJECT_DIR$/bestnotes/templates/subjects.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bestnotes/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/bestnotes/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bestnotes/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/bestnotes/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
