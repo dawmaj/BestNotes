@@ -22,7 +22,7 @@
             <h4 class="text-white text-center" id="choose_subject_all">Wybierz przedmiot</h4>
             <ul class="list-group cProductsList mt-3" id="list_all"> 
                 {% for subject in subjects %}
-                    <a href="/bestnotes/subject/{{ subject.id }}" id="{{ subject.name }}{{subject.id}}" class="list-group-item list-group-item-action">{{ subject.name }}</a>
+                    <a href="/bestnotes/topics_by_subject_id/{{ subject.id }}" id="{{ subject.name }}{{subject.id}}" class="list-group-item list-group-item-action">{{ subject.name }}</a>
                 {% endfor %}
             </ul>
         </div>
@@ -31,7 +31,7 @@
             <h4 class="text-white text-center" id="choose_subject_yours">Wybierz przedmiot</h4>
             <ul class="list-group cProductsList mt-3" id="list_yours"> 
                 {% for subject in student_subjects %}
-                    <a href="/bestnotes/subject/{{ subject.id }}" id="{{ subject.name }}{{subject.id}}" class="list-group-item list-group-item-action">{{ subject.name }}</a>
+                    <a href="/bestnotes/topics_by_subject_id/{{ subject.id }}" id="{{ subject.name }}{{subject.id}}" class="list-group-item list-group-item-action">{{ subject.name }}</a>
                 {% endfor %}
             </ul>
         </div>
