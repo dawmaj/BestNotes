@@ -11,23 +11,23 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-sm-6">
-            <h2 class="text-white text-center">Dostępne notatki</h2>
-            <ul class="list-group cProductsList mt-3"> 
-                {% for note in notes%}
+        <div class="col-sm-6" id="all_container">
+            <h2 class="text-white text-center" id="avaliable_notes">Dostępne notatki</h2>
+            <ul class="list-group cProductsList mt-3" id="all_notes_list"> 
+                {% for note in notes %}
                     {% if user.id != note.user.user.id %}
-                    <a href="/bestnotes/note/{{ note.id }}" class="list-group-item list-group-item-action">{{ note.name }}</a>
-                {% endif %}
+                        <a href="/bestnotes/note/{{ note.id }}" id="{{ note_name }}{{note_id}}" class="list-group-item list-group-item-action">{{ note.name }}</a>
+                    {% endif %}
                 {% endfor %}
             </ul>
         </div>
-        <div class="col-sm-6">
-            <h2 class="text-white text-center">Twoje notatki</h2>
-            <ul class="list-group cProductsList mt-3"> 
-                {% for note in notes%}
-                {% if user.id == note.user.user.id %}
-                    <a href="/bestnotes/note/{{ note.id }}" class="list-group-item list-group-item-action">{{ note.name }}</a>
-                {% endif %}
+        <div class="col-sm-6" id="your_container">
+            <h2 class="text-white text-center" id="your_notes">Twoje notatki</h2>
+            <ul class="list-group cProductsList mt-3" id="your_notes_list"> 
+                {% for note in notes %}
+                    {% if user.id == note.user.user.id %}
+                        <a href="/bestnotes/note/{{ note.id }}" id="{{ note_name }}{{note_id}}" class="list-group-item list-group-item-action">{{ note.name }}</a>
+                    {% endif %}
                 {% endfor %}
             </ul>
         </div>
