@@ -160,6 +160,18 @@ class Base {
         return isDisplayed;
     }
 
+    waitForCookiesSet(cookies) {
+        cookies.forEach((cookie) => {
+            browser.waitUntil(
+                () => browser.getCookies([cookie.name]) !== null,
+                5000,
+                `Could not find cookie ${cookie.name}`,
+                500
+            );
+        });
+        browser.refresh();
+    }
+
     wait(timeout) {
         setTimeout(() => { console.log(`This is a explicit wait of ${timeout}`); }, timeout);
     }
