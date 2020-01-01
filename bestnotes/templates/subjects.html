@@ -10,37 +10,32 @@
 
 {% include 'navbar.html' %}
 
-<div class="container">
-        <div class="d-flex justify-content-center mt-5">
-            <h3 class="text-white">Dodaj nowy przedmiot</h3>
+<div class="mb-5">
+    <div>
+        <img src="{% static 'laptop2.jpg' %}" class="w-100 img-fluid"/>
+    </div>
+</div>
+<div class="container mb-5">
+    <div class="row">
+        <div class="col-sm-6 mb-5">
+            <h2 class="text-white text-center mb-5 bg-dark" id="avaliable_notes">Dostępne notatki</h2>
+            <h4 class="text-white text-center" id="choose_subject_all">Wybierz przedmiot</h4>
+            <ul class="list-group cProductsList mt-3" id="list_all"> 
+                {% for subject in subjects %}
+                    <a href="/bestnotes/topics_by_subject_id/{{ subject.id }}" id="{{ subject.name }}{{subject.id}}" class="list-group-item list-group-item-action">{{ subject.name }}</a>
+                {% endfor %}
+            </ul>
         </div>
-    <div class="d-flex justify-content-center mt-3">
-        <form role="form">
-            <input type="text" class="form-control" placeholder="Nowy przedmiot" name="przedmiot">
-        </form>
-        <button type="button" class="btn btn btn-primary ml-1">Dodaj</button>
+        <div class="col-sm-6">
+            <h2 class="text-white text-center mb-5 bg-dark" id="your_notes">Twoje notatki</h2>
+            <h4 class="text-white text-center" id="choose_subject_yours">Wybierz przedmiot</h4>
+            <ul class="list-group cProductsList mt-3" id="list_yours"> 
+                {% for subject in student_subjects %}
+                    <a href="/bestnotes/topics_by_subject_id/{{ subject.id }}" id="{{ subject.name }}{{subject.id}}" class="list-group-item list-group-item-action">{{ subject.name }}</a>
+                {% endfor %}
+            </ul>
+        </div>
     </div>
-    <div class="d-flex justify-content-center mt-5">
-            <h3 class="text-white">Lista przedmiotów</h3>
-    </div>
-    <a class="row justify-content-center text-white">Liczba dostępnych przedmiotów: 3/5</a>
-    <ul class="list-group cProductsList mt-3"> 
-            <li class="list-group-item d-sm-flex justify-content-between"><p class="p-0 m-0 flex-grow-1">Programowanie</p> 
-                <button class="btn-primary mr-1" ><a class="nolink" href="/bestnotes/notes/1">Zarządzaj</a></button> 
-                <button class="btn-success mr-1">Edytuj</button>  
-                <button class="btn-danger">Usuń</button>
-            </li>
-            <li class="list-group-item d-sm-flex justify-content-between"><p class="p-0 m-0 flex-grow-1">Matematyka</p>  
-                <button class="btn-primary mr-1"><a class="nolink" href="/bestnotes/notes/2">Zarządzaj</a></button>
-                <button class="btn-success mr-1">Edytuj</button>
-                <button class="btn-danger">Usuń</button>
-            </li> 
-            <li class="list-group-item d-sm-flex justify-content-between"><p class="p-0 m-0 flex-grow-1">Systemy informatyczne</p>  
-                <button class="btn-primary mr-1"><a class="nolink" href="/bestnotes/notes/3">Zarządzaj</a></button>
-                <button class="btn-success mr-1">Edytuj</button>
-                <button class="btn-danger">Usuń</button>
-             </li> 
-    </ul>
 </div>
 
 {% else %}
