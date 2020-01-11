@@ -9,7 +9,7 @@
         <ul class="navbar-nav collapse navbar-collapse"  id="navbarNav">
             <li id="home" class="nav-item nav-link"><a class="nolink" href="{% url 'homepage' %}"><i class="fa fa-home fa-2x"></a></i></li>
             {% if user.is_authenticated %}
-            <li id="add_note" class="nav-item nav-link"><a class="nolink" href="#"><i class="fa fa-pencil-square-o fa-2x"></a></i></li>
+            <li id="add_note" class="nav-item nav-link"><a class="nolink" href="{% url 'add' %}"><i class="fa fa-pencil-square-o fa-2x"></a></i></li>
             <li id="all_subjects" class="nav-item nav-link active"><a class="nolink" href="{% url 'subject' %}"><i class="fa fa-list-ul fa-2x"></i></a></li>
             <li id="logout" class="nav-item nav-link"><a class="nolink" href="{% url 'logout' %}"><i class="fa fa-sign-out fa-2x"></i></a></li>
             {% else %}

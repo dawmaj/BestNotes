@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'widget_tweaks',
+    'tinymce',
 ]
 
 MIDDLEWARE = [
@@ -125,3 +126,18 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+TINYMCE_JS_URL = "https://cdn.tiny.cloud/1/no-api-key/tinymce/5.1.4-66/tinymce.min.js"
+
+TINYMCE_DEFAULT_CONFIG = {
+    'height' : 500,
+    'plugins': "image,imagetools,media,codesample,link,code",
+    'cleanup_on_startup': True,
+    'menubar': False,
+    'toolbar': "styleselect |undo redo | bold italic | alignleft aligncenter alignright | link image media codesample code",
+    'image_caption': True,
+    'image_advtab': True,
+    'custom_undo_redo_levels': 10,
+    'file_browser_callback' : "myFileBrowser"
+}

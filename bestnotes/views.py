@@ -1,12 +1,18 @@
 from django.shortcuts import render
-from bestnotes.models import Note, Topic, Subject
-# Create your views here.
-
+from bestnotes.models import Note, Topic, Subject, StudentProfile
+from datetime import date
+from .forms import EditorForm
+from django.urls import reverse
 from django.http import HttpResponse
+from django.http import HttpResponseRedirect
 
 def homepage(request):
     #return HttpResponse("BestNotes' index will be here.")
     return render(request, "homepage.html", {})
+
+def add(request):
+    form = EditorForm()
+    return render(request, "add.html", {"form": form})
 
 
 def subject(request):
@@ -79,6 +85,42 @@ def subjects_all(request):
         student_subjects.append(note.topic.subject)
     context = {
         'subjects' : all_subjects,
-        'student_subjects': student_subjects
+        'student_subjects': set(student_subjects)
     }
     return render(request, "subjects.html", context)
+
+def create_note(request):
+    form = EditorForm(request.POST)
+    if request.method == 'POST':
+        #Get actual user as Student
+        student = StudentProfile.objects.get(user=request.user.id)
+
+        #Check if subject exist, if not create it
+        subject = Subject()
+        print(form.data['subject'])
+        if Subject.objects.filter(name=form.data['subject']):
+            subject = Subject.objects.filter(name=form.data['subject'])[0]
+        else:
+            subject = Subject(name=form.data['subject'], student=student)
+            subject.save()
+        #Now topic, in addition check if exist in subject
+        topic = Topic()
+        if Topic.objects.filter(name=form.data['topic'], subject=subject):
+            topic = Topic.objects.filter(name=form.data['topic'], subject=subject)[0]
+        else:
+            topic = Topic(name=form.data['topic'], 
+            subject=subject,
+            add_date=date.today())
+            topic.save()
+            
+
+        #Create note
+        note = Note(name=form.data['name'],
+        content=form.data['content'],
+        text="Empty", 
+        topic=topic, 
+        user=student, 
+        add_date=date.today())
+        note.save()
+    url = reverse('subject')
+    return HttpResponseRedirect(url)

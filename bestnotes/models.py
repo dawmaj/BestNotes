@@ -5,6 +5,8 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 from django.dispatch import receiver
+from tinymce import models as tinymce_models
+
 
 class StudentProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
@@ -48,6 +50,7 @@ class Topic(models.Model):
 
 class Note(models.Model):
     name = models.CharField(max_length=30)
+    content = tinymce_models.HTMLField("Content")
     text = models.TextField(blank=False)
     topic = models.ForeignKey(Topic, on_delete=models.SET_NULL, null=True)
     user = models.ForeignKey(StudentProfile, on_delete=models.CASCADE)

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+{% load static %}
+{% block css %}
+{% endblock %}
+{% block content %}
+{% include 'navbar.html' %}
+
+<form action="/bestnotes/create/" method="post">{% csrf_token %}
+    <div class="form-group">
+        {% render_field form.name class="form-control mb-2 mt-4" id="name" placeholder="Wpisz nazwe notatki" %}
+        {% render_field form.subject class="form-control mb-2" name="subject" id="subject" placeholder="Wpisz przedmiot" %}
+        {% render_field form.topic class="form-control mb-2" id="topic" placeholder="Wpisz temat" %}
+    <div>
+    {% render_field form.content id="content" %}
+    <input type="submit" class="btn-primary" value="Dodaj">
+</form>
+
+
+
+
+{% endblock %}

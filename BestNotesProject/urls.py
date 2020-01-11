@@ -20,5 +20,6 @@ from bestnotes.views import homepage
 urlpatterns = [
     path('bestnotes/', include('bestnotes.urls')),
     path('', homepage, name='homepage'),
+    path(r'^tinymce/', include('tinymce.urls')),
     path('admin/', admin.site.urls),
 ]
