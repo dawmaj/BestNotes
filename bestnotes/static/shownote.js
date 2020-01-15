@@ -2,8 +2,10 @@
 tinymce.init({
     selector: '.tmpTextArea',
     menubar: false,
+    skin: 'oxide-dark',
+    content_css: 'dark',
     plugins: [
-        'advlist autolink lists link image charmap print preview anchor',
+        'autoresize advlist autolink lists link image charmap print preview anchor',
         'searchreplace visualblocks code fullscreen',
         'insertdatetime media table contextmenu paste code'
     ],

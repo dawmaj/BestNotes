@@ -132,6 +132,8 @@ TINYMCE_JS_URL = "https://cdn.tiny.cloud/1/no-api-key/tinymce/5.1.4-66/tinymce.m
 
 TINYMCE_DEFAULT_CONFIG = {
     'height' : 500,
+    'skin': 'oxide-dark',
+    'content_css': 'dark',
     'plugins': "image,imagetools,media,codesample,link,code",
     'cleanup_on_startup': True,
     'menubar': False,

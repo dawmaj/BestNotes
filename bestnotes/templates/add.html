@@ -8,12 +8,14 @@
 
 <form action="/bestnotes/create/" method="post">{% csrf_token %}
     <div class="form-group">
-        {% render_field form.name class="form-control mb-2 mt-4" id="name" placeholder="Wpisz nazwe notatki" %}
-        {% render_field form.subject class="form-control mb-2" name="subject" id="subject" placeholder="Wpisz przedmiot" %}
-        {% render_field form.topic class="form-control mb-2" id="topic" placeholder="Wpisz temat" %}
+        {% render_field form.name class="form-control mb-2 mt-4 bg-dark text-light" id="name" placeholder="Wpisz nazwe notatki" %}
+        {% render_field form.subject class="form-control mb-2 bg-dark text-light" name="subject" id="subject" placeholder="Wpisz przedmiot" %}
+        {% render_field form.topic class="form-control mb-2 bg-dark text-light" id="topic" placeholder="Wpisz temat" %}
     <div>
     {% render_field form.content id="content" %}
-    <input type="submit" class="btn-primary" value="Dodaj">
+    <div>
+        <input type="submit" class="btn-primary mt-1" value="Dodaj notatke">
+    </div>
 </form>
 
 
