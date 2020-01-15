@@ -124,3 +124,27 @@ def create_note(request):
         note.save()
     url = reverse('subject')
     return HttpResponseRedirect(url)
+
+def delete_note(request, note_id):
+    #Get values
+    note = Note.objects.get(pk=note_id)
+    student = StudentProfile.objects.get(user=request.user.id)
+    #Check if student has possibility do delete this note
+    if note.user.id == student.id:
+        note.delete()
+    delete_empty_categories()
+    #Redirect
+    url = reverse('subject')
+    return HttpResponseRedirect(url)
+
+def delete_empty_categories():
+    #Get all topics
+    topics = Topic.objects.all()
+    for topic in topics:
+        if not topic.note_set.all().exists():
+            topic.delete()
+    #Same for subjects
+    subjects = Subject.objects.all()
+    for subject in subjects:
+        if not subject.topic_set.all().exists():
+            subject.delete()
