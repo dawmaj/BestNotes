@@ -11,10 +11,14 @@
 </div>
 {% if note.user.user.id == user.id %}
 <div class="container">
-    <div class="row d-flex justify-content-center"><button id="edit_note" class="btn-success mr-1">Edytuj</button> 
-    <form action="{% url 'delete_note' note_id=note.id%}">
-        <button type="submit" id="delete_note" class="btn-danger">Usuń</button></div>
-    </form>
+    <div class="row d-flex justify-content-center">
+        <form action="{% url 'update_note' note_id=note.id %}">
+            <button type="submit" id="edit_note" class="btn-success mr-1">Edytuj</button> 
+        </form>
+        <form action="{% url 'delete_note' note_id=note.id %}">
+            <button type="submit" id="delete_note" class="btn-danger">Usuń</button>
+        </form>
+    </div>
 </div>
 {% endif %}
 

@@ -97,7 +97,6 @@ def create_note(request):
 
         #Check if subject exist, if not create it
         subject = Subject()
-        print(form.data['subject'])
         if Subject.objects.filter(name=form.data['subject']):
             subject = Subject.objects.filter(name=form.data['subject'])[0]
         else:
@@ -113,7 +112,6 @@ def create_note(request):
             add_date=date.today())
             topic.save()
             
-
         #Create note
         note = Note(name=form.data['name'],
         content=form.data['content'],
@@ -135,6 +133,55 @@ def delete_note(request, note_id):
     delete_empty_categories()
     #Redirect
     url = reverse('subject')
+    return HttpResponseRedirect(url)
+
+
+
+#Update note view html
+def update_note(request, note_id):
+    
+    note = Note.objects.get(pk=note_id)
+    form = EditorForm(initial={'content': note.content,
+    'subject':note.topic.subject.name,
+    'topic':note.topic.name,
+    'name':note.name})
+    
+    context = {
+        'note':note,
+        'form':form
+    }
+    return render(request, "update.html", context)
+
+def update_note_id(request, note_id):
+    note = Note.objects.get(pk=note_id)
+    form = EditorForm(request.POST)
+    student = StudentProfile.objects.get(user=request.user.id)
+
+    if request.method == 'POST':
+        subject = Subject()
+        if Subject.objects.filter(name=form.data['subject']):
+            subject = Subject.objects.filter(name=form.data['subject'])[0]
+        else:
+            subject = Subject(name=form.data['subject'], student=student)
+            subject.save()
+        #Now topic, in addition check if exist in subject
+        topic = Topic()
+        if Topic.objects.filter(name=form.data['topic'], subject=subject):
+            topic = Topic.objects.filter(name=form.data['topic'], subject=subject)[0]
+        else:
+            topic = Topic(name=form.data['topic'], 
+            subject=subject,
+            add_date=date.today())
+            topic.save()
+            
+        #Update note
+        note.content = form.data['content']
+        note.name = form.data['name']
+        note.topic = topic
+        note.save(force_update=True)
+
+    delete_empty_categories()
+    url = reverse('note', args=[note_id])
     return HttpResponseRedirect(url)
 
 def delete_empty_categories():
