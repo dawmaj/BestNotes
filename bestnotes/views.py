@@ -59,7 +59,7 @@ def topics_by_subject_id(request,subject_id):
     topics_under_subject = all_topics.filter(subject__id=subject_id) #get topics under given subject
 
     if len(topics_under_subject) > 0:
-        subject_name = all_topics[0].subject.name  # Get note with given id
+        subject_name = topics_under_subject[0].subject.name  # Get note with given id
 
         context = {
             'subject_name': subject_name,
