@@ -1,4 +1,5 @@
 /node_modules/
+/test/allure-results/
 /test/allure-results/*.xml
 /test/allure-results/*.png
 /test/allure-results/*.log
