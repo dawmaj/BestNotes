@@ -13,7 +13,7 @@ describe('Topic page in BestNotes', () => {
         topic.clickSubjectButton();
         
         addStep('Check if Topic Page is displayed and URL matches');
-        expect(browser.getUrl(), 'Topic Page URL is displayed as expected').to.equal(common.bestNotesLink + 'topics_by_subject_id/1');
-        expect(topic.getTextFromListButton(), 'Title of topic shoukd be equal Programowanie obiektowe').to.equal('Programowanie obiektowe');
+        expect(browser.getUrl(), 'Topic Page URL is displayed as expected').to.equal(common.bestNotesLink + 'topics_by_subject_id/9');
+        expect(topic.getTextFromListButton(), 'Title of topic shoukd be equal Podstawowe informacje').to.equal('Podstawowe informacje');
     })
 });

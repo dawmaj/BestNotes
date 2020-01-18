@@ -6,9 +6,9 @@ class Navigation {
     constructor() {
         this.baseUrl = 'bestnotes.pythonanywhere';
         this.loginUrl = 'http://bestnotes.pythonanywhere.com/bestnotes/accounts/login/';
-        this.notesUrl = 'http://bestnotes.pythonanywhere.com/bestnotes/notes/1';
+        this.notesUrl = 'http://bestnotes.pythonanywhere.com/bestnotes/notes/9';
         this.subjectUrl = 'http://bestnotes.pythonanywhere.com/bestnotes/subject/';
-        this.topicUrl = 'http://bestnotes.pythonanywhere.com/bestnotes/topics_by_subject_id/1';
+        this.topicUrl = 'http://bestnotes.pythonanywhere.com/bestnotes/topics_by_subject_id/9';
         this.loggedInCookiesSet = [
             {
                 name: 'sessionid',

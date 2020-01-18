@@ -13,15 +13,16 @@ describe('Note page in BestNotes', () => {
         const note = navigate.toNotesPage('anon');
 
         addStep('Check if Note Form URL matches');
-        expect(browser.getUrl(), 'Note Form URL is not displayed as expected').to.equal(common.bestNotesLink + 'notes/1');
+        expect(browser.getUrl(), 'Note Form URL is displayed as expected').to.equal(common.bestNotesLink + 'notes/9');
 
-        addStep('Click Note with Lorem Ipsum');
+        addStep('Click Note with Va Banque cite');
         note.clickNoteButton();
 
         addStep('Check if Note has a correct URL, title and contains text');
-        expect(browser.getUrl(), 'Note URL is displayed as expected').to.equal(common.bestNotesLink + 'note/1');
-        expect(note.getTitleNote(), 'Title note should be displayed about Lorem ipsum').to.equal(`${common.titleNote}${common.loremIpsum}`);
-        expect(note.getTextNote(), 'Text note should contained lorem ipsum text').to.contain(common.loremIpsum);
+        expect(browser.getUrl(), 'Note URL is displayed as expected').to.equal(common.bestNotesLink + 'note/12');
+        expect(note.getTitleNote(), 'Title note should be displayed about Va Banque').to.equal(`${common.titleNote}${common.loremIpsum}`);
+        expect(note.isNoteDisplayed(), 'Note field should be displayed').to.be.true;
+        //expect(note.getTextNote(), 'Text note should contained Va Banque text').to.contain('Va Banque');
     })
 
     it('should be displayed properly as logged user', () => {
@@ -30,20 +31,21 @@ describe('Note page in BestNotes', () => {
         topic.clickSubjectButton();
         
         addStep('Check if Topic Page is displayed and URL matches');
-        expect(browser.getUrl(), 'Topic Page URL is displayed as expected').to.equal(common.bestNotesLink + 'topics_by_subject_id/1');
+        expect(browser.getUrl(), 'Topic Page URL is displayed as expected').to.equal(common.bestNotesLink + 'topics_by_subject_id/9');
 
-        addStep('Click topic Programowanie obiektowe');
-        expect(topic.getTextFromListButton(), 'Title of topic shoukd be equal Programowanie obiektowe').to.equal('Programowanie obiektowe');
+        addStep('Click topic Podstawowe informacje');
+        expect(topic.getTextFromListButton(), 'Title of topic shoukd be equal Podstawowe informacje').to.equal('Podstawowe informacje');
         topic.clickTopicButton();
 
-        addStep('Click note Lorem ipsum 1');
-        expect(topic.getTextFromListButton(), 'Title of note shoukd be equal Lorem ipsum 1').to.equal('Lorem ipsum 1');
+        addStep('Click note Nowy program Va Banque w TV');
+        expect(topic.getTextFromListButton(), 'Title of note shoukd be equal Nowy program Va Banque w TV').to.equal('Nowy program Va Banque w TV');
         topic.clickNoteButton();
 
         addStep('Check if Note has a correct URL, title and contains text');
-        expect(browser.getUrl(), 'Note URL is displayed as expected').to.equal(common.bestNotesLink + 'note/3');
-        expect(topic.getTitleNote(), 'Title note should be displayed about Lorem ipsum 1').to.equal(`${common.titleNote}Lorem ipsum 1`);
-        expect(topic.getTextNote(), 'Text note should contained Lorem ipsum 1 text').to.contain('Lorem ipsum 1');
+        expect(browser.getUrl(), 'Note URL is displayed as expected').to.equal(common.bestNotesLink + 'note/12');
+        expect(topic.getTitleNote(), 'Title note should be displayed about Nowy program Va Banque w TV').to.equal(`${common.titleNote}Nowy program Va Banque w TV`);
+        expect(topic.isNoteDisplayed(), 'Note field should be displayed').to.be.true;
+        //expect(topic.getTextNote(), 'Text note should contained Va Banque in text').to.contain('Va Banque');
     })
 });
 

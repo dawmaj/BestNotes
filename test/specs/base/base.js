@@ -117,7 +117,7 @@ class Base {
                 console.log(`${elementName} is not displayed. Exception: ${e}`);
                 return false;
             }
-        }, 5000, `Expected ${selector} to be displayed after 5s`);
+        }, 10000, `Expected ${selector} to be displayed after 10s`);
     }
 
     waitForNthElementDisplayed(selectorList, position, elementName) {

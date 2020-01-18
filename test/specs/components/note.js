@@ -6,7 +6,7 @@ class Note {
         this.subjectNavbar = '.navbar';
         this.manageButton = '.nolink';
         this.noteHeader = '.mt-4 > h1';
-        this.noteText = 'h3';
+        this.noteText = '.tox-edit-area';
         this.noteSelectButton = '#all_notes_list > a:nth-child(1)';
         this.subjectButton = '#Programowanie1';
         this.topicButton = '.cProductsList > a:nth-child(1)';
@@ -65,6 +65,10 @@ class Note {
         return base.getAttribute(this.noteText, 'textContent', 'Text in note');
     }
 
+    isNoteDisplayed() {
+        base.waitForDisplayed(this.noteText);
+        return base.isDisplayed(this.noteText);
+    }
 
     isEditButtonDisplayed() {
         base.waitForDisplayed(this.editNoteButton);
