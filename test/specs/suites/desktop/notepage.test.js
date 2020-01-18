@@ -39,7 +39,7 @@ describe('Note page in BestNotes', () => {
 
         addStep('Click note Nowy program Va Banque w TV');
         expect(topic.getTextFromListButton(), 'Title of note shoukd be equal Nowy program Va Banque w TV').to.equal('Nowy program Va Banque w TV');
-        topic.clickNoteButton();
+        topic.clickYourNoteButton();
 
         addStep('Check if Note has a correct URL, title and contains text');
         expect(browser.getUrl(), 'Note URL is displayed as expected').to.equal(common.bestNotesLink + 'note/12');
