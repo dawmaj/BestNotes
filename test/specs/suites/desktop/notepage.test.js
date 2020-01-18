@@ -22,7 +22,7 @@ describe('Note page in BestNotes', () => {
         expect(browser.getUrl(), 'Note URL is displayed as expected').to.equal(common.bestNotesLink + 'note/12');
         expect(note.getTitleNote(), 'Title note should be displayed about Va Banque').to.equal(`${common.titleNote}${common.loremIpsum}`);
         expect(note.isNoteDisplayed(), 'Note field should be displayed').to.be.true;
-        //expect(note.getTextNote(), 'Text note should contained Va Banque text').to.contain('Va Banque');
+        expect(note.getTextNote(), 'Text note should contained Va Banque text').to.contain('Va Banque');
     })
 
     it('should be displayed properly as logged user', () => {
@@ -45,7 +45,7 @@ describe('Note page in BestNotes', () => {
         expect(browser.getUrl(), 'Note URL is displayed as expected').to.equal(common.bestNotesLink + 'note/12');
         expect(topic.getTitleNote(), 'Title note should be displayed about Nowy program Va Banque w TV').to.equal(`${common.titleNote}Nowy program Va Banque w TV`);
         expect(topic.isNoteDisplayed(), 'Note field should be displayed').to.be.true;
-        //expect(topic.getTextNote(), 'Text note should contained Va Banque in text').to.contain('Va Banque');
+        expect(topic.getTextNote(), 'Text note should contained Va Banque in text').to.contain('Va Banque');
     })
 });
 

@@ -7,6 +7,9 @@ class Common {
         this.errorLoginMessage = 'Nieprawidłowy adres e-mail lub hasło. Spróbuj ponownie!';
         this.testName = 'test';
         this.correctName = 'admin';
+        this.noteName = `${Date.now()}`;
+        this.subject = 'Testy automatyczne';
+        this.topic = 'Testy';
     }
 
 }

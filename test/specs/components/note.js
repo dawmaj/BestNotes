@@ -6,10 +6,13 @@ class Note {
         this.subjectNavbar = '.navbar';
         this.manageButton = '.nolink';
         this.noteHeader = '.mt-4 > h1';
-        this.noteText = '.tox-edit-area';
+        this.frameNote = '#mce_0_ifr';
+        this.noteText = 'body';
+        this.allSubjects = '#list_all > a:last-child';
         this.noteSelectButton = '#all_notes_list > a:nth-child(1)';
         this.subjectButton = '#Programowanie1';
         this.topicButton = '.cProductsList > a:nth-child(1)';
+        this.lastTopicButton = '.cProductsList > a:last-child';
         this.yourNotesButton = '#your_notes_list > a:nth-child(1)';
         this.deleteNoteButton = '#delete_note';
         this.editNoteButton = '#edit_note';
@@ -35,6 +38,16 @@ class Note {
         return base.getAttribute(this.noteSelectButton, 'textContent', 'Text in note');
     }
 
+    getTextFromSubject() {
+        base.waitForDisplayed(this.allSubjects);
+        return base.getAttribute(this.allSubjects, 'textContent', 'Text in note');
+    }
+
+    clickLastNoteButton() {
+        base.click(this.allSubjects, 'Note button');
+        return this;
+    }
+
     clickNoteButton() {
         base.click(this.noteSelectButton, 'Note button');
         return this;
@@ -51,7 +64,12 @@ class Note {
     }
 
     clickTopicButton() {
-        base.click(this.topicButton, 'Subject button');
+        base.click(this.topicButton, 'Topic button');
+        return this;
+    }
+
+    clickLastTopicButton() {
+        base.click(this.lastTopicButton, 'Topic button');
         return this;
     }
 
@@ -61,7 +79,9 @@ class Note {
     }
 
     getTextNote() {
-        base.waitForDisplayed(this.noteText);
+        base.waitForDisplayed($(this.frameNote));
+        browser.switchToFrame($(this.frameNote));
+        //base.waitForDisplayed(this.noteText);
         return base.getAttribute(this.noteText, 'textContent', 'Text in note');
     }
 

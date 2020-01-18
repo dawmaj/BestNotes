@@ -1,6 +1,7 @@
 const base = require('./base');
 const Login = require('../components/login');
 const Note = require('../components/note');
+const AddNote = require('../components/add-note');
 
 class Navigation {
     constructor() {
@@ -9,10 +10,11 @@ class Navigation {
         this.notesUrl = 'http://bestnotes.pythonanywhere.com/bestnotes/notes/9';
         this.subjectUrl = 'http://bestnotes.pythonanywhere.com/bestnotes/subject/';
         this.topicUrl = 'http://bestnotes.pythonanywhere.com/bestnotes/topics_by_subject_id/9';
+        this.addNoteUrl = 'http://bestnotes.pythonanywhere.com/bestnotes/addnote/';
         this.loggedInCookiesSet = [
             {
                 name: 'sessionid',
-                value: 'wjx1o12d94hf2pv3xmfu5kya29v4kono',
+                value: '8h635pv4mwwj4y4bgmcyli678pxd8vsl',
                 path: '/',
                 domain: `.${this.baseUrl}.com`,
             },
@@ -36,6 +38,12 @@ class Navigation {
         browser.url(this.notesUrl);
         this.setUser(user);
         return new Note();
+    }
+
+    toAddNotePage(user) {
+        browser.url(this.addNoteUrl);
+        this.setUser(user);
+        return new AddNote();
     }
 
     toSubjectPage(user) {

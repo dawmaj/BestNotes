@@ -7,6 +7,7 @@ exports.config = {
         login: ['./test/specs/suites/desktop/loginpage.test.js'],
         note: ['./test/specs/suites/desktop/notepage.test.js'],
         topic: ['./test/specs/suites/desktop/topicpage.test.js'],
+        creation: ['./test/specs/suites/desktop/createnote.test.js'],
     },
     specs: [
         './test/specs/**/*.js'
@@ -18,7 +19,7 @@ exports.config = {
         maxInstances: 5,
         browserName: 'chrome',
         'goog:chromeOptions': {
-            args: ['--no-sandbox', '--headless', '--window-size=1366,968'],
+            args: ['--no-sandbox',  '--window-size=1366,968'],
         },
     }],
 
