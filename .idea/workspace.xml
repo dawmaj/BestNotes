@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b23c009e-2f8a-48f7-8b29-023f93596932" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/bestnotes/static/topics.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bestnotes/templates/topics.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bestnotes/templates/subjects.html" beforeDir="false" afterPath="$PROJECT_DIR$/bestnotes/templates/subjects.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bestnotes/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/bestnotes/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bestnotes/templates/registration/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/bestnotes/templates/registration/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bestnotes/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/bestnotes/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -36,7 +34,7 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../BestNotes-BES-55/bestnotes" />
     <property name="settings.editor.selected.configurable" value="preferences.general" />
   </component>
   <component name="RunDashboard">

@@ -5,22 +5,27 @@ from .forms import EditorForm
 from django.urls import reverse
 from django.http import HttpResponse
 from django.http import HttpResponseRedirect
+from django.contrib.auth.decorators import login_required
 
 def homepage(request):
     #return HttpResponse("BestNotes' index will be here.")
     return render(request, "homepage.html", {})
 
+@login_required(login_url='/bestnotes/accounts/login/')
 def add(request):
     form = EditorForm()
     return render(request, "add.html", {"form": form})
 
 
+@login_required(login_url='/bestnotes/accounts/login/')
 def subject(request):
     return render(request, "subjects.html", {})
 
+@login_required(login_url='/bestnotes/accounts/login/')
 def subject_id(request,id):
     return render(request, "subject.html", {'id': id})
 
+@login_required(login_url='/bestnotes/accounts/login/')
 def note_id(request,id):
     all_notes = Note.objects.all()
     notes = all_notes.filter(id=id)
@@ -34,6 +39,7 @@ def note_id(request,id):
         return HttpResponse("Note not found.")
 
 
+@login_required(login_url='/bestnotes/accounts/login/')
 #Give all notes connected with subject name and pass it to html
 def notes_name(request,subject_id):
     all_notes = Note.objects.all()
@@ -45,6 +51,7 @@ def notes_name(request,subject_id):
     return render(request, "notes.html", context)
 
 
+@login_required(login_url='/bestnotes/accounts/login/')
 def notes_by_topic_id(request,topic_id):
     all_notes = Note.objects.all()
     topic_notes = all_notes.filter(topic__id=topic_id) #Get all notes with given topic id
@@ -54,6 +61,7 @@ def notes_by_topic_id(request,topic_id):
     #Change website here
     return render(request, "notes.html", context)
 
+@login_required(login_url='/bestnotes/accounts/login/')
 def topics_by_subject_id(request,subject_id):
     all_topics = Topic.objects.all()
     topics_under_subject = all_topics.filter(subject__id=subject_id) #get topics under given subject
@@ -70,6 +78,7 @@ def topics_by_subject_id(request,subject_id):
         return HttpResponse("Topics not found.")
 
 
+@login_required(login_url='/bestnotes/accounts/login/')
 def notes_all(request):
     all_notes = Note.objects.all()
     context = {
@@ -77,6 +86,7 @@ def notes_all(request):
     }
     return render(request, "test.html", context)
 
+@login_required(login_url='/bestnotes/accounts/login/')
 def subjects_all(request):
     all_subjects = Subject.objects.all()
     student_notes = Note.objects.all().filter(user__user__id=request.user.id)
@@ -89,6 +99,7 @@ def subjects_all(request):
     }
     return render(request, "subjects.html", context)
 
+@login_required(login_url='/bestnotes/accounts/login/')
 def create_note(request):
     form = EditorForm(request.POST)
     if request.method == 'POST':
@@ -123,6 +134,7 @@ def create_note(request):
     url = reverse('subject')
     return HttpResponseRedirect(url)
 
+@login_required(login_url='/bestnotes/accounts/login/')
 def delete_note(request, note_id):
     #Get values
     note = Note.objects.get(pk=note_id)
@@ -137,6 +149,7 @@ def delete_note(request, note_id):
 
 
 
+@login_required(login_url='/bestnotes/accounts/login/')
 #Update note view html
 def update_note(request, note_id):
     
@@ -152,6 +165,7 @@ def update_note(request, note_id):
     }
     return render(request, "update.html", context)
 
+@login_required(login_url='/bestnotes/accounts/login/')
 def update_note_id(request, note_id):
     note = Note.objects.get(pk=note_id)
     form = EditorForm(request.POST)
@@ -184,6 +198,7 @@ def update_note_id(request, note_id):
     url = reverse('note', args=[note_id])
     return HttpResponseRedirect(url)
 
+@login_required(login_url='/bestnotes/accounts/login/')
 def delete_empty_categories():
     #Get all topics
     topics = Topic.objects.all()
