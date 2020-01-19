@@ -3,11 +3,12 @@ tinymce.init({
     selector: '.tmpTextArea',
     menubar: false,
     skin: 'oxide-dark',
+    branding: false,
     content_css: 'dark',
     plugins: [
         'autoresize advlist autolink lists link image charmap print preview anchor',
         'searchreplace visualblocks codesample fullscreen',
-        'insertdatetime media table contextmenu paste code'
+        'insertdatetime media table paste code'
     ],
     readonly: 1,
     toolbar: false,

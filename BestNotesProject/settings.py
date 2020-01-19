@@ -128,13 +128,14 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 
-TINYMCE_JS_URL = "https://cdn.tiny.cloud/1/no-api-key/tinymce/5.1.4-66/tinymce.min.js"
+TINYMCE_JS_URL = "https://cdn.tiny.cloud/1/r9o35nobg5gdj46hhxw3ohwbjh4yct23kx405ozckt8fj2k2/tinymce/5.1.4-66/tinymce.min.js"
 
 TINYMCE_DEFAULT_CONFIG = {
     'height' : 500,
     'skin': 'oxide-dark',
+    'branding': False,
     'content_css': 'dark',
-    'plugins': "image,imagetools,media,codesample,link,code",
+    'plugins': "image,imagetools,media,codesample,link,code,wordcount",
     'cleanup_on_startup': True,
     'menubar': False,
     'contextmenu': "cut, copy, link, media, ",
