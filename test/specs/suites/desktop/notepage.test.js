@@ -48,35 +48,3 @@ describe('Note page in BestNotes', () => {
         expect(topic.getTextNote(), 'Text note should contained Va Banque in text').to.contain('Va Banque');
     })
 });
-
-
-//commented till adding notes will be implemented
-
-/* describe('User Notes in BestNotes', () => {
-    it('Edit and Delete Button should be displayed in user notes', () => {
-        addStep('Redirect to Topic Page as anon');
-        const topic = navigate.toTopicPage();
-        topic.clickSubjectButton();
-        
-        addStep('Check if Topic Page is displayed and URL matches');
-        expect(browser.getUrl(), 'Topic Page URL is displayed as expected').to.equal(common.bestNotesLink + 'topics_by_subject_id/1');
-
-        addStep('Click topic Programowanie obiektowe');
-        expect(topic.getTextFromListButton(), 'Title of topic shoukd be equal Programowanie obiektowe').to.equal('Programowanie obiektowe');
-        topic.clickTopicButton();
-
-        addStep('Click note Lorem ipsum');
-        expect(topic.getTextFromYourNotesListButton(), 'Title of note shoukd be equal Lorem ipsum').to.equal('Lorem ipsum');
-        topic.clickYourNoteButton();
-
-        addStep('Check if Note has a correct URL, title and contains text');
-        expect(browser.getUrl(), 'Note URL is displayed as expected').to.equal(common.bestNotesLink + 'note/1');
-        expect(topic.getTitleNote(), 'Title note should be displayed about Lorem ipsum').to.equal(`${common.titleNote}Lorem ipsum`);
-        expect(topic.getTextNote(), 'Text note should contained Lorem ipsum text').to.contain('Lorem ipsum');
-
-        addStep('Check if Note has a edit and delete button');
-        expect(topic.isEditButtonDisplayed(), 'Edit button should be displayed').to.equal(true);
-        expect(topic.isDeleteButtonDisplayed(), 'Delete button should be displayed').to.equal(true);
-    })
-});
-*/

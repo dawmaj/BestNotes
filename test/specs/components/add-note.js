@@ -8,6 +8,8 @@ class AddNote {
         this.noteTopic = '#topic';
         this.noteField = '#tinymce';
         this.frameNote = '#content_ifr';
+        this.boxFormatting = '.tox-dialog';
+        this.boxHeader = '.tox-dialog__header';
         this.toolbarButton = '.tox-tbtn';
         this.addNoteButton = '.mt-1';
     }
@@ -40,12 +42,22 @@ class AddNote {
     }
 
     clickFormattingButton(id) {
-        base.clickNth(this.toolbarButton, id, 'Button for Bold');
+        base.clickNth(this.toolbarButton, id, 'Button for formatting');
         return this;
     }
 
     isFormattingButtonEnabled(id) {
         return JSON.parse($$(this.toolbarButton)[id].getAttribute('aria-pressed'));
+    }
+
+    isBoxDisplayed() {
+        base.waitForDisplayed(this.boxFormatting);
+        return base.isDisplayed(this.boxFormatting);
+    }
+
+    getBoxHeaderText() {
+        base.waitForDisplayed(this.boxHeader);
+        return base.getAttribute(this.boxHeader, 'textContent', 'Header in box');
     }
 }
 module.exports = AddNote;

@@ -39,19 +39,9 @@ describe('Formatting buttons', () => {
         const addnote = navigate.toAddNotePage('user');
         
         addStep('Check if bold button is enabled');
-        const date = `${common.noteName}`
+        const date = `${common.noteName}`;
         addnote.clickFormattingButton(3);
         expect(addnote.isFormattingButtonEnabled(3), 'Bold button is enabled').to.be.true;
-    })
-
-    it('bold styling is disabled', () => {
-        addStep('Redirect to Create Note Page as logged user');
-        const addnote = navigate.toAddNotePage('user');
-        
-        addStep('Check if bold button is disabled');
-        const date = `${common.noteName}`
-        addnote.clickFormattingButton(3).clickFormattingButton(3);
-        expect(addnote.isFormattingButtonEnabled(3), 'Bold button is disabled').to.be.false;
     })
 
     it('italic styling is enabled', () => {
@@ -59,18 +49,94 @@ describe('Formatting buttons', () => {
         const addnote = navigate.toAddNotePage('user');
         
         addStep('Check if Italic button is enabled');
-        const date = `${common.noteName}`
+        const date = `${common.noteName}`;
         addnote.clickFormattingButton(4);
         expect(addnote.isFormattingButtonEnabled(4), 'Italic button is enabled').to.be.true;
     })
 
-    it('italic styling is disabled', () => {
+    it('right align styling is enabled', () => {
         addStep('Redirect to Create Note Page as logged user');
         const addnote = navigate.toAddNotePage('user');
         
-        addStep('Check if Italic button is disabled');
-        const date = `${common.noteName}`
-        addnote.clickFormattingButton(4).clickFormattingButton(4);
-        expect(addnote.isFormattingButtonEnabled(4), 'Italic button is disabled').to.be.false;
+        addStep('Check if right align button is enabled');
+        const date = `${common.noteName}`;
+        addnote.clickFormattingButton(5);
+        expect(addnote.isFormattingButtonEnabled(5), 'Right align button is enabled').to.be.true;
+    })
+
+    it('center align styling is enabled', () => {
+        addStep('Redirect to Create Note Page as logged user');
+        const addnote = navigate.toAddNotePage('user');
+        
+        addStep('Check if center align button is enabled');
+        const date = `${common.noteName}`;
+        addnote.clickFormattingButton(6);
+        expect(addnote.isFormattingButtonEnabled(6), 'Center align button is enabled').to.be.true;
+    })
+
+    it('left align styling is enabled', () => {
+        addStep('Redirect to Create Note Page as logged user');
+        const addnote = navigate.toAddNotePage('user');
+        
+        addStep('Check if left align button is enabled');
+        const date = `${common.noteName}`;
+        addnote.clickFormattingButton(7);
+        expect(addnote.isFormattingButtonEnabled(7), 'Left align button is enabled').to.be.true;
+    })
+
+    it('Insert/edit link is enabled', () => {
+        addStep('Redirect to Create Note Page as logged user');
+        const addnote = navigate.toAddNotePage('user');
+        
+        addStep('Check if insert/edit link option is enabled');
+        const date = `${common.noteName}`;
+        addnote.clickFormattingButton(8);
+        expect(addnote.isFormattingButtonEnabled(8), 'Edit link button is disabled').to.be.false;
+
+        addStep('Check if box is displayed for editing link');
+        expect(addnote.isBoxDisplayed(), 'Box to edit link is displayed').to.be.true;
+        expect(addnote.getBoxHeaderText(), 'Header of box are about editing link').to.be.equal('Insert/Edit Link');
+    })
+
+    it('Insert/edit image is enabled', () => {
+        addStep('Redirect to Create Note Page as logged user');
+        const addnote = navigate.toAddNotePage('user');
+        
+        addStep('Check if insert/edit image option is enabled');
+        const date = `${common.noteName}`;
+        addnote.clickFormattingButton(9);
+        expect(addnote.isFormattingButtonEnabled(9), 'Edit image button is disabled').to.be.false;
+
+        addStep('Check if box is displayed for editing image');
+        expect(addnote.isBoxDisplayed(), 'Box to edit image is displayed').to.be.true;
+        expect(addnote.getBoxHeaderText(), 'Header of box are about editing image').to.be.equal('Insert/Edit Image');
+    })
+
+    it('Insert/edit media is enabled', () => {
+        addStep('Redirect to Create Note Page as logged user');
+        const addnote = navigate.toAddNotePage('user');
+        
+        addStep('Check if insert/edit media option is enabled');
+        const date = `${common.noteName}`;
+        addnote.clickFormattingButton(10);
+        expect(addnote.isFormattingButtonEnabled(10), 'Edit media button is disabled').to.be.false;
+
+        addStep('Check if box is displayed for editing media');
+        expect(addnote.isBoxDisplayed(), 'Box to edit media is displayed').to.be.true;
+        expect(addnote.getBoxHeaderText(), 'Header of box are about editing media').to.be.equal('Insert/Edit Media');
+    })
+
+    it('Insert/edit code sample is enabled', () => {
+        addStep('Redirect to Create Note Page as logged user');
+        const addnote = navigate.toAddNotePage('user');
+        
+        addStep('Check if insert/edit code sample option is enabled');
+        const date = `${common.noteName}`;
+        addnote.clickFormattingButton(11);
+        expect(addnote.isFormattingButtonEnabled(11), 'Edit code sample button is disabled').to.be.false;
+
+        addStep('Check if box is displayed for editing code sample');
+        expect(addnote.isBoxDisplayed(), 'Box to edit code sample is displayed').to.be.true;
+        expect(addnote.getBoxHeaderText(), 'Header of box are about editing code sample').to.be.equal('Insert/Edit Code Sample');
     })
 });
