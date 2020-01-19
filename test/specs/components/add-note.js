@@ -8,6 +8,7 @@ class AddNote {
         this.noteTopic = '#topic';
         this.noteField = '#tinymce';
         this.frameNote = '#content_ifr';
+        this.toolbarButton = '.tox-tbtn';
         this.addNoteButton = '.mt-1';
     }
 
@@ -36,6 +37,15 @@ class AddNote {
         browser.switchToFrame(null);
         base.click(this.addNoteButton, 'Subject button');
         return this;
+    }
+
+    clickFormattingButton(id) {
+        base.clickNth(this.toolbarButton, id, 'Button for Bold');
+        return this;
+    }
+
+    isFormattingButtonEnabled(id) {
+        return JSON.parse($$(this.toolbarButton)[id].getAttribute('aria-pressed'));
     }
 }
 module.exports = AddNote;

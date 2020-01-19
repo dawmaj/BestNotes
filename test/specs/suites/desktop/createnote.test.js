@@ -32,3 +32,45 @@ describe('Creation note', () => {
         expect(note.getTextNote(), 'Text note should contain ecce ipsum text').to.equal(common.ecceIpsum);
     })
 });
+
+describe('Formatting buttons', () => {
+    it('bold styling is enabled', () => {
+        addStep('Redirect to Create Note Page as logged user');
+        const addnote = navigate.toAddNotePage('user');
+        
+        addStep('Check if bold button is enabled');
+        const date = `${common.noteName}`
+        addnote.clickFormattingButton(3);
+        expect(addnote.isFormattingButtonEnabled(3), 'Bold button is enabled').to.be.true;
+    })
+
+    it('bold styling is disabled', () => {
+        addStep('Redirect to Create Note Page as logged user');
+        const addnote = navigate.toAddNotePage('user');
+        
+        addStep('Check if bold button is disabled');
+        const date = `${common.noteName}`
+        addnote.clickFormattingButton(3).clickFormattingButton(3);
+        expect(addnote.isFormattingButtonEnabled(3), 'Bold button is disabled').to.be.false;
+    })
+
+    it('italic styling is enabled', () => {
+        addStep('Redirect to Create Note Page as logged user');
+        const addnote = navigate.toAddNotePage('user');
+        
+        addStep('Check if Italic button is enabled');
+        const date = `${common.noteName}`
+        addnote.clickFormattingButton(4);
+        expect(addnote.isFormattingButtonEnabled(4), 'Italic button is enabled').to.be.true;
+    })
+
+    it('italic styling is disabled', () => {
+        addStep('Redirect to Create Note Page as logged user');
+        const addnote = navigate.toAddNotePage('user');
+        
+        addStep('Check if Italic button is disabled');
+        const date = `${common.noteName}`
+        addnote.clickFormattingButton(4).clickFormattingButton(4);
+        expect(addnote.isFormattingButtonEnabled(4), 'Italic button is disabled').to.be.false;
+    })
+});
