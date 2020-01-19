@@ -6,7 +6,7 @@ tinymce.init({
     content_css: 'dark',
     plugins: [
         'autoresize advlist autolink lists link image charmap print preview anchor',
-        'searchreplace visualblocks code fullscreen',
+        'searchreplace visualblocks codesample fullscreen',
         'insertdatetime media table contextmenu paste code'
     ],
     readonly: 1,
