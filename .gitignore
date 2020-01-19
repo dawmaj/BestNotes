@@ -7,6 +7,7 @@
 /test/allure-results/*.mp4
 /test/screenshots/*.png
 /allure-report/
+/_results_/
  
 # Created by https://www.gitignore.io
 
