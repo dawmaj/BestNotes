@@ -128,18 +128,17 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 
-TINYMCE_JS_URL = "https://cdn.tiny.cloud/1/no-api-key/tinymce/5.1.4-66/tinymce.min.js"
+TINYMCE_JS_URL = "https://cdn.tiny.cloud/1/r9o35nobg5gdj46hhxw3ohwbjh4yct23kx405ozckt8fj2k2/tinymce/5.1.4-66/tinymce.min.js"
 
 TINYMCE_DEFAULT_CONFIG = {
     'height' : 500,
     'skin': 'oxide-dark',
+    'branding': False,
     'content_css': 'dark',
-    'plugins': "image,imagetools,media,codesample,link,code",
-    'cleanup_on_startup': True,
+    'plugins': "image,imagetools,media,codesample,link,code,wordcount",
     'menubar': False,
-    'toolbar': "styleselect |undo redo | bold italic | alignleft aligncenter alignright | link image media codesample code",
+    'contextmenu': "cut, copy, link, media ",
+    'toolbar': "styleselect | undo redo | bold italic underline superscript subscript| fontselect fontsizeselect forecolor backcolor | alignleft aligncenter alignright | link image media codesample code",
     'image_caption': True,
-    'image_advtab': True,
-    'custom_undo_redo_levels': 10,
-    'file_browser_callback' : "myFileBrowser"
+    'image_advtab': True
 }

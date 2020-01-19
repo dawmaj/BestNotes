@@ -39,17 +39,17 @@ def save_studentprofile(sender, instance, **kwargs):
 
 
 class Subject(models.Model):
-    name = models.CharField(max_length=30)
+    name = models.CharField(max_length=40)
     student = models.ForeignKey(StudentProfile, on_delete=models.CASCADE)
 
 class Topic(models.Model):
-    name = models.CharField(max_length=30)
+    name = models.CharField(max_length=40)
     subject = models.ForeignKey(Subject, on_delete=models.CASCADE)
     add_date = models.DateField()
 
 
 class Note(models.Model):
-    name = models.CharField(max_length=30)
+    name = models.CharField(max_length=60)
     content = tinymce_models.HTMLField("Content")
     text = models.TextField(blank=False)
     topic = models.ForeignKey(Topic, on_delete=models.SET_NULL, null=True)

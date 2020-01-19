@@ -6,7 +6,7 @@
 {% block content %}
 {% include 'navbar.html' %}
 
-<form action={% url 'create_note' %} method="post">{% csrf_token %}
+<form action="{% url 'update_note_id' note_id=note.id %}" method="post">{% csrf_token %}
     <div class="form-group">
         {% render_field form.name class="form-control mb-2 mt-4 bg-dark text-light" id="name" placeholder="Wpisz nazwe notatki" %}
         {% render_field form.subject class="form-control mb-2 bg-dark text-light" name="subject" id="subject" placeholder="Wpisz przedmiot" %}
@@ -14,7 +14,7 @@
     <div>
     {% render_field form.content id="content" %}
     <div>
-        <input type="submit" class="btn-primary mt-1" value="Dodaj notatke">
+        <input type="submit" class="btn-primary mt-1" value="Aktualizuj notatke">
     </div>
 </form>
 
