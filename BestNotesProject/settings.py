@@ -136,12 +136,9 @@ TINYMCE_DEFAULT_CONFIG = {
     'branding': False,
     'content_css': 'dark',
     'plugins': "image,imagetools,media,codesample,link,code,wordcount",
-    'cleanup_on_startup': True,
     'menubar': False,
-    'contextmenu': "cut, copy, link, media, ",
+    'contextmenu': "cut, copy, link, media ",
     'toolbar': "styleselect | undo redo | bold italic underline superscript subscript| fontselect fontsizeselect forecolor backcolor | alignleft aligncenter alignright | link image media codesample code",
     'image_caption': True,
-    'image_advtab': True,
-    'custom_undo_redo_levels': 10,
-    'file_browser_callback' : "myFileBrowser"
+    'image_advtab': True
 }
