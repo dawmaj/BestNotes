@@ -18,7 +18,7 @@
             }
             stage('Deploy') {
                 steps {
-                    echo 'Deploying....'
+                    echo 'Deploying the app to the production'
                 }
             }
         }
